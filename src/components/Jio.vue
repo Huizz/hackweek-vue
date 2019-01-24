@@ -17,6 +17,7 @@
           <input
             type="text"
             class="form-control w-100"
+            v-model="newPersonHandle"
             placeholder="Telegram handler"
             aria-label="Telegram-handler"
           >
@@ -47,6 +48,10 @@ export default class Jio extends Vue {
   }
 
   private handleAddPerson() {
+    if (this.$data.newPersonName === '' || this.$data.newPersonHandle === '') {
+      alert('empty fields');
+      return;
+    }
     this.$data.persons.push({
       name: this.$data.newPersonName,
       handle: this.$data.newPersonHandle,
