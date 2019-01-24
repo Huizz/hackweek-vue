@@ -61,3 +61,12 @@ export default class Jio extends Vue {
 }
 </script>
 
+<style lang="scss" scoped>
+.jio {
+  overflow: hidden;
+  text-align: left;
+  &__btn {
+    float: right;
+  }
+}
+</style>

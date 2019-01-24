@@ -1,5 +1,7 @@
 <template>
-  <Jio v-bind:jio='jio'/>
+  <div>
+    <Jio v-for="(jio, index) in jios" v-bind:jio="jio" v-bind:key="index"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,10 +14,16 @@ import Jio from '@/components/Jio.vue';
   },
   data() {
     return {
-      jio: {
-        title: 'This is a jio',
-        date: '2019-04-05',
-      },
+      jios: [
+        {
+          title: 'This is a jio',
+          date: '2019-04-05',
+        },
+        {
+          title: 'Daeyeol 보자',
+          date: '2019-02-11',
+        },
+      ],
     };
   },
 })
